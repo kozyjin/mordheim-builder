@@ -1,0 +1,27 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Claude Code (réglages locaux)
+.claude/settings.local.json
+
+# Java / Maven / Gradle
+target/
+build/
+.gradle/
+*.class
+
+# Angular / Node
+node_modules/
+dist/
+.angular/
+
+# Secrets et configuration locale
+.env
+*.local
+
+# Logs et fichiers système
+*.log
+.DS_Store
+Thumbs.db
