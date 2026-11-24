@@ -1,0 +1,12 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/mordheim_builder
+        username: ${DB_USER:mordheim}
+        password: ${DB_PASSWORD:mordheim}
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        open-in-view: false
+    flyway:
+        enabled: true
+    
