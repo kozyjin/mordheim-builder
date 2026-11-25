@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WeaponTest {
 
     //methode utilitaire
-    private Weapon weaponCreate(boolean isShootingWeapon, boolean isCloseCombatWeapon){
+    private static Weapon aWeapon(boolean isShootingWeapon, boolean isCloseCombatWeapon){
 
         return new Weapon(UUID.randomUUID(),"Epee","Utilisateur","corps à corps",6,"Commun",isShootingWeapon,isCloseCombatWeapon,List.of());
     }
@@ -19,7 +19,7 @@ class WeaponTest {
     @Test
     void shouldCreateWeapon(){
         ArrayList<SpecialRule> specialRules = new ArrayList<>();
-        Weapon weapon = weaponCreate(true, false);
+        Weapon weapon = aWeapon(true, false);
         assertEquals("Epee",weapon.name());
         assertEquals(6,weapon.cost());
         assertTrue(weapon.isShootingWeapon());
@@ -65,14 +65,14 @@ class WeaponTest {
 
     @Test
     void shouldAcceptAWeaponWithAType() {
-        Weapon weapon =  weaponCreate(true, false);
+        Weapon weapon =  aWeapon(true, false);
 
         assertTrue(weapon.isShootingWeapon());
         assertFalse(weapon.isCloseCombatWeapon());
     }
     @Test
     void shouldAcceptAWeaponWithTwoTypes(){
-        Weapon weapon = weaponCreate(true, true);
+        Weapon weapon = aWeapon(true, true);
 
         assertTrue(weapon.isShootingWeapon());
         assertTrue(weapon.isCloseCombatWeapon());
